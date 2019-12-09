@@ -5,6 +5,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Controls;
@@ -15,6 +16,7 @@ namespace Helloprofit_product_list.Models
     {
         public static string ConnectionString = "Data Source=system.db;Version=3;";
         public static string SimpleDateFormat = "dd/MM/yyyy HH:mm:ss";
+        public static readonly Regex PriceRegex = new Regex(@"[^\d.]");
         public static Dictionary<string, string> Config = new Dictionary<string, string>();
         //Used to load UI components last state from config dictionary
         public static void InitCntrl(Control parent)
@@ -106,6 +108,14 @@ namespace Helloprofit_product_list.Models
             {
                 Console.WriteLine(ex.ToString());
             }
+        }
+
+        public static string BetweenStrings(string text, string start, string end)
+        {
+            var p1 = text.IndexOf(start, StringComparison.Ordinal) + start.Length;
+            var p2 = text.IndexOf(end, p1, StringComparison.Ordinal);
+            if (end == "") return (text.Substring(p1));
+            else return text.Substring(p1, p2 - p1);
         }
 
         public static void CreateDb()
