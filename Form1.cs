@@ -15,6 +15,8 @@ using System.Windows.Forms;
 using CsvHelper;
 using MetroFramework.Forms;
 using Helloprofit_product_list.Models;
+using MetroFramework.Controls;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Helloprofit_product_list
@@ -35,10 +37,122 @@ namespace Helloprofit_product_list
         private string _baseUrl;
         private string _baseUrl2 = "https://app.helloprofit.com/merchant/product_fees";
         private Dictionary<string, (double cost, string secondId)> _costs;
+        private Dictionary<string, string> _config = new Dictionary<string, string>();
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        void InitControls(Control parent)
+        {
+            try
+            {
+                foreach (Control x in parent.Controls)
+                {
+                    try
+                    {
+                        if (x.Name.EndsWith("I"))
+                        {
+                            switch (x)
+                            {
+                                case MetroCheckBox _:
+                                case CheckBox _:
+                                    ((CheckBox)x).Checked = bool.Parse(_config[((CheckBox)x).Name]);
+                                    break;
+                                case RadioButton radioButton:
+                                    radioButton.Checked = bool.Parse(_config[radioButton.Name]);
+                                    break;
+                                case TextBox _:
+                                case RichTextBox _:
+                                case MetroTextBox _:
+                                    x.Text = _config[x.Name];
+                                    break;
+                                case NumericUpDown numericUpDown:
+                                    numericUpDown.Value = int.Parse(_config[numericUpDown.Name]);
+                                    break;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+
+                    InitControls(x);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public void SaveControls(Control parent)
+        {
+            try
+            {
+                foreach (Control x in parent.Controls)
+                {
+                    #region Add key value to disctionarry
+
+                    if (x.Name.EndsWith("I"))
+                    {
+                        switch (x)
+                        {
+                            case MetroCheckBox _:
+                            case RadioButton _:
+                            case CheckBox _:
+                                _config.Add(x.Name, ((CheckBox)x).Checked + "");
+                                break;
+                            case TextBox _:
+                            case RichTextBox _:
+                            case MetroTextBox _:
+                                _config.Add(x.Name, x.Text);
+                                break;
+                            case NumericUpDown _:
+                                _config.Add(x.Name, ((NumericUpDown)x).Value + "");
+                                break;
+                            default:
+                                Console.WriteLine(@"could not find a type for " + x.Name);
+                                break;
+                        }
+                    }
+                    #endregion
+                    SaveControls(x);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void SaveConfig()
+        {
+            _config = new Dictionary<string, string>();
+            SaveControls(this);
+            try
+            {
+                File.WriteAllText("config.txt", JsonConvert.SerializeObject(_config, Formatting.Indented));
+            }
+            catch (Exception e)
+            {
+                ErrorLog(e.ToString());
+            }
+        }
+        private void LoadConfig()
+        {
+            try
+            {
+                _config = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText("config.txt"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return;
+            }
+            InitControls(this);
         }
 
         private async void Form1_Load(object sender, EventArgs e)
@@ -51,9 +165,7 @@ namespace Helloprofit_product_list
             Directory.CreateDirectory("data");
             Application.ThreadException += Application_ThreadException;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            Utility.CreateDb();
-            Utility.LoadConfig();
-            Utility.InitCntrl(this);
+            LoadConfig();
             if (_isConsole)
             {
                 this.WindowState = FormWindowState.Minimized;
@@ -293,17 +405,24 @@ namespace Helloprofit_product_list
             try
             {
                 var conf = File.ReadAllLines(_path + "/config.txt").ToList();
-                _user = conf[0];
-                _pass = conf[1];
-                _output = conf[2];
-                _threads = int.Parse(conf[3]);
-                _baseUrl = conf[4];
+                //_user = conf[0];
+                //_pass = conf[1];
+                //_output = conf[2];
+                //_threads = int.Parse(conf[3]);
+                //_baseUrl = conf[4];
+
+                _user = HelloProfit_UserI.Text;
+                _pass = HelloProfit_passI.Text;
+                _output = outputI.Text;
+                _threads = (int)maxThreadsI.Value;
+                _baseUrl = baseUrlI.Text;
             }
             catch (Exception ex)
             {
                 ErrorLog($"failed to read config {ex}");
                 return;
             }
+            SaveConfig();
             var loginResp = await LoginToHelloProfit();
             if (loginResp != null)
             {
@@ -363,9 +482,7 @@ namespace Helloprofit_product_list
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Utility.Config = new Dictionary<string, string>();
-            Utility.SaveCntrl(this);
-            Utility.SaveConfig();
+            SaveConfig();
         }
 
         private void loadInputB_Click(object sender, EventArgs e)
@@ -562,6 +679,31 @@ namespace Helloprofit_product_list
                 SetProgress(nbr * 100 / total);
             }
             Display($"completed costs update  {nbr} / {total} , success : {good}");
+        }
+
+        private void loadOutputB_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog1 = new SaveFileDialog
+            {
+                Filter = @"csv file|*.csv",
+                Title = @"Select the output location",
+                InitialDirectory = _path
+            };
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+                outputI.Text = saveFileDialog1.FileName;
+        }
+
+        private void openOutputB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start(outputI.Text);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog(ex.ToString());
+            }
         }
     }
 }
