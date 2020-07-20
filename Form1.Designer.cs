@@ -31,6 +31,17 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.maxThreadsI = new System.Windows.Forms.NumericUpDown();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.baseUrlI = new MetroFramework.Controls.MetroTextBox();
+            this.HelloProfit_passI = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.HelloProfit_UserI = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.openOutputB = new MetroFramework.Controls.MetroButton();
+            this.loadOutputB = new MetroFramework.Controls.MetroButton();
+            this.outputI = new MetroFramework.Controls.MetroTextBox();
             this.openInputB = new MetroFramework.Controls.MetroButton();
             this.loadInputB = new MetroFramework.Controls.MetroButton();
             this.inputI = new MetroFramework.Controls.MetroTextBox();
@@ -46,25 +57,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.ProgressB = new System.Windows.Forms.ProgressBar();
             this.displayT = new System.Windows.Forms.Label();
-            this.HelloProfit_passI = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.HelloProfit_UserI = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.openOutputB = new MetroFramework.Controls.MetroButton();
-            this.loadOutputB = new MetroFramework.Controls.MetroButton();
-            this.outputI = new MetroFramework.Controls.MetroTextBox();
-            this.baseUrlI = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.maxThreadsI = new System.Windows.Forms.NumericUpDown();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maxThreadsI)).BeginInit();
             this.panel1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.maxThreadsI)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -127,204 +127,76 @@
             this.panel2.Size = new System.Drawing.Size(739, 334);
             this.panel2.TabIndex = 14;
             // 
-            // openInputB
+            // maxThreadsI
             // 
-            this.openInputB.Location = new System.Drawing.Point(569, 16);
-            this.openInputB.Name = "openInputB";
-            this.openInputB.Size = new System.Drawing.Size(92, 23);
-            this.openInputB.TabIndex = 30;
-            this.openInputB.Text = "Open Input";
-            this.openInputB.UseSelectable = true;
-            this.openInputB.UseStyleColors = true;
-            this.openInputB.Click += new System.EventHandler(this.openInputB_Click);
+            this.maxThreadsI.Location = new System.Drawing.Point(105, 223);
+            this.maxThreadsI.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.maxThreadsI.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.maxThreadsI.Name = "maxThreadsI";
+            this.maxThreadsI.Size = new System.Drawing.Size(117, 20);
+            this.maxThreadsI.TabIndex = 59;
+            this.maxThreadsI.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // loadInputB
+            // metroLabel4
             // 
-            this.loadInputB.Location = new System.Drawing.Point(452, 16);
-            this.loadInputB.Name = "loadInputB";
-            this.loadInputB.Size = new System.Drawing.Size(92, 23);
-            this.loadInputB.TabIndex = 29;
-            this.loadInputB.Text = "Input File";
-            this.loadInputB.UseSelectable = true;
-            this.loadInputB.UseStyleColors = true;
-            this.loadInputB.Click += new System.EventHandler(this.loadInputB_Click);
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(18, 223);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel4.TabIndex = 58;
+            this.metroLabel4.Text = "Max threads";
             // 
-            // inputI
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(21, 104);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(53, 19);
+            this.metroLabel3.TabIndex = 57;
+            this.metroLabel3.Text = "baseUrl";
+            // 
+            // baseUrlI
             // 
             // 
             // 
             // 
-            this.inputI.CustomButton.Image = null;
-            this.inputI.CustomButton.Location = new System.Drawing.Point(380, 1);
-            this.inputI.CustomButton.Name = "";
-            this.inputI.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.inputI.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.inputI.CustomButton.TabIndex = 1;
-            this.inputI.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.inputI.CustomButton.UseSelectable = true;
-            this.inputI.CustomButton.Visible = false;
-            this.inputI.Lines = new string[0];
-            this.inputI.Location = new System.Drawing.Point(21, 16);
-            this.inputI.MaxLength = 32767;
-            this.inputI.Name = "inputI";
-            this.inputI.PasswordChar = '\0';
-            this.inputI.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.inputI.SelectedText = "";
-            this.inputI.SelectionLength = 0;
-            this.inputI.SelectionStart = 0;
-            this.inputI.ShortcutsEnabled = true;
-            this.inputI.Size = new System.Drawing.Size(402, 23);
-            this.inputI.TabIndex = 28;
-            this.inputI.UseSelectable = true;
-            this.inputI.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.inputI.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // logToFileI
-            // 
-            this.logToFileI.AutoSize = true;
-            this.logToFileI.Location = new System.Drawing.Point(20, 297);
-            this.logToFileI.Name = "logToFileI";
-            this.logToFileI.Size = new System.Drawing.Size(79, 15);
-            this.logToFileI.Style = MetroFramework.MetroColorStyle.Blue;
-            this.logToFileI.TabIndex = 27;
-            this.logToFileI.Text = "Log To File";
-            this.logToFileI.UseSelectable = true;
-            // 
-            // logToUII
-            // 
-            this.logToUII.AutoSize = true;
-            this.logToUII.Location = new System.Drawing.Point(20, 260);
-            this.logToUII.Name = "logToUII";
-            this.logToUII.Size = new System.Drawing.Size(72, 15);
-            this.logToUII.Style = MetroFramework.MetroColorStyle.Blue;
-            this.logToUII.TabIndex = 26;
-            this.logToUII.Text = "Log To UI";
-            this.logToUII.UseSelectable = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.updateCostsB);
-            this.panel1.Controls.Add(this.UpdateTagsB);
-            this.panel1.Controls.Add(this.startB);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(739, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(170, 334);
-            this.panel1.TabIndex = 6;
-            // 
-            // updateCostsB
-            // 
-            this.updateCostsB.Location = new System.Drawing.Point(30, 59);
-            this.updateCostsB.Name = "updateCostsB";
-            this.updateCostsB.Size = new System.Drawing.Size(111, 43);
-            this.updateCostsB.Style = MetroFramework.MetroColorStyle.Blue;
-            this.updateCostsB.TabIndex = 25;
-            this.updateCostsB.Text = "Update Cost";
-            this.updateCostsB.UseSelectable = true;
-            this.updateCostsB.UseStyleColors = true;
-            this.updateCostsB.Click += new System.EventHandler(this.updateCostsB_Click);
-            // 
-            // UpdateTagsB
-            // 
-            this.UpdateTagsB.Location = new System.Drawing.Point(31, 3);
-            this.UpdateTagsB.Name = "UpdateTagsB";
-            this.UpdateTagsB.Size = new System.Drawing.Size(111, 43);
-            this.UpdateTagsB.Style = MetroFramework.MetroColorStyle.Blue;
-            this.UpdateTagsB.TabIndex = 24;
-            this.UpdateTagsB.Text = "Update Tags";
-            this.UpdateTagsB.UseSelectable = true;
-            this.UpdateTagsB.UseStyleColors = true;
-            this.UpdateTagsB.Click += new System.EventHandler(this.UpdateTagsB_Click);
-            // 
-            // startB
-            // 
-            this.startB.Location = new System.Drawing.Point(31, 115);
-            this.startB.Name = "startB";
-            this.startB.Size = new System.Drawing.Size(111, 43);
-            this.startB.Style = MetroFramework.MetroColorStyle.Blue;
-            this.startB.TabIndex = 23;
-            this.startB.Text = "Start";
-            this.startB.UseSelectable = true;
-            this.startB.UseStyleColors = true;
-            this.startB.Click += new System.EventHandler(this.startB_Click);
-            // 
-            // metroTabPage2
-            // 
-            this.metroTabPage2.Controls.Add(this.metroPanel2);
-            this.metroTabPage2.HorizontalScrollbarBarColor = false;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 0;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 41);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(868, 161);
-            this.metroTabPage2.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Logs";
-            this.metroTabPage2.VerticalScrollbarBarColor = false;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 0;
-            // 
-            // metroPanel2
-            // 
-            this.metroPanel2.Controls.Add(this.DebugT);
-            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(868, 161);
-            this.metroPanel2.TabIndex = 2;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
-            // 
-            // DebugT
-            // 
-            this.DebugT.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DebugT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DebugT.Cursor = System.Windows.Forms.Cursors.Default;
-            this.DebugT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DebugT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DebugT.Location = new System.Drawing.Point(0, 0);
-            this.DebugT.Margin = new System.Windows.Forms.Padding(4);
-            this.DebugT.Name = "DebugT";
-            this.DebugT.ReadOnly = true;
-            this.DebugT.Size = new System.Drawing.Size(868, 161);
-            this.DebugT.TabIndex = 1;
-            this.DebugT.Text = "";
-            this.DebugT.WordWrap = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panel3.Controls.Add(this.ProgressB);
-            this.panel3.Controls.Add(this.displayT);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(20, 439);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(917, 57);
-            this.panel3.TabIndex = 17;
-            // 
-            // ProgressB
-            // 
-            this.ProgressB.Location = new System.Drawing.Point(4, 35);
-            this.ProgressB.Name = "ProgressB";
-            this.ProgressB.Size = new System.Drawing.Size(933, 14);
-            this.ProgressB.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.ProgressB.TabIndex = 4;
-            // 
-            // displayT
-            // 
-            this.displayT.AutoSize = true;
-            this.displayT.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayT.ForeColor = System.Drawing.Color.Black;
-            this.displayT.Location = new System.Drawing.Point(22, 10);
-            this.displayT.Name = "displayT";
-            this.displayT.Size = new System.Drawing.Size(91, 16);
-            this.displayT.TabIndex = 2;
-            this.displayT.Text = "Bot Started";
+            this.baseUrlI.CustomButton.Image = null;
+            this.baseUrlI.CustomButton.Location = new System.Drawing.Point(431, 1);
+            this.baseUrlI.CustomButton.Name = "";
+            this.baseUrlI.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.baseUrlI.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.baseUrlI.CustomButton.TabIndex = 1;
+            this.baseUrlI.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.baseUrlI.CustomButton.UseSelectable = true;
+            this.baseUrlI.CustomButton.Visible = false;
+            this.baseUrlI.Lines = new string[0];
+            this.baseUrlI.Location = new System.Drawing.Point(91, 100);
+            this.baseUrlI.MaxLength = 32767;
+            this.baseUrlI.Name = "baseUrlI";
+            this.baseUrlI.PasswordChar = '\0';
+            this.baseUrlI.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.baseUrlI.SelectedText = "";
+            this.baseUrlI.SelectionLength = 0;
+            this.baseUrlI.SelectionStart = 0;
+            this.baseUrlI.ShortcutsEnabled = true;
+            this.baseUrlI.Size = new System.Drawing.Size(453, 23);
+            this.baseUrlI.Style = MetroFramework.MetroColorStyle.Blue;
+            this.baseUrlI.TabIndex = 56;
+            this.baseUrlI.UseSelectable = true;
+            this.baseUrlI.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.baseUrlI.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // HelloProfit_passI
             // 
@@ -459,76 +331,204 @@
             this.outputI.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.outputI.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // baseUrlI
+            // openInputB
+            // 
+            this.openInputB.Location = new System.Drawing.Point(569, 16);
+            this.openInputB.Name = "openInputB";
+            this.openInputB.Size = new System.Drawing.Size(92, 23);
+            this.openInputB.TabIndex = 30;
+            this.openInputB.Text = "Open Input";
+            this.openInputB.UseSelectable = true;
+            this.openInputB.UseStyleColors = true;
+            this.openInputB.Click += new System.EventHandler(this.openInputB_Click);
+            // 
+            // loadInputB
+            // 
+            this.loadInputB.Location = new System.Drawing.Point(452, 16);
+            this.loadInputB.Name = "loadInputB";
+            this.loadInputB.Size = new System.Drawing.Size(92, 23);
+            this.loadInputB.TabIndex = 29;
+            this.loadInputB.Text = "Input File";
+            this.loadInputB.UseSelectable = true;
+            this.loadInputB.UseStyleColors = true;
+            this.loadInputB.Click += new System.EventHandler(this.loadInputB_Click);
+            // 
+            // inputI
             // 
             // 
             // 
             // 
-            this.baseUrlI.CustomButton.Image = null;
-            this.baseUrlI.CustomButton.Location = new System.Drawing.Point(431, 1);
-            this.baseUrlI.CustomButton.Name = "";
-            this.baseUrlI.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.baseUrlI.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.baseUrlI.CustomButton.TabIndex = 1;
-            this.baseUrlI.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.baseUrlI.CustomButton.UseSelectable = true;
-            this.baseUrlI.CustomButton.Visible = false;
-            this.baseUrlI.Lines = new string[0];
-            this.baseUrlI.Location = new System.Drawing.Point(91, 100);
-            this.baseUrlI.MaxLength = 32767;
-            this.baseUrlI.Name = "baseUrlI";
-            this.baseUrlI.PasswordChar = '\0';
-            this.baseUrlI.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.baseUrlI.SelectedText = "";
-            this.baseUrlI.SelectionLength = 0;
-            this.baseUrlI.SelectionStart = 0;
-            this.baseUrlI.ShortcutsEnabled = true;
-            this.baseUrlI.Size = new System.Drawing.Size(453, 23);
-            this.baseUrlI.Style = MetroFramework.MetroColorStyle.Blue;
-            this.baseUrlI.TabIndex = 56;
-            this.baseUrlI.UseSelectable = true;
-            this.baseUrlI.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.baseUrlI.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.inputI.CustomButton.Image = null;
+            this.inputI.CustomButton.Location = new System.Drawing.Point(380, 1);
+            this.inputI.CustomButton.Name = "";
+            this.inputI.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.inputI.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.inputI.CustomButton.TabIndex = 1;
+            this.inputI.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.inputI.CustomButton.UseSelectable = true;
+            this.inputI.CustomButton.Visible = false;
+            this.inputI.Lines = new string[0];
+            this.inputI.Location = new System.Drawing.Point(21, 16);
+            this.inputI.MaxLength = 32767;
+            this.inputI.Name = "inputI";
+            this.inputI.PasswordChar = '\0';
+            this.inputI.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.inputI.SelectedText = "";
+            this.inputI.SelectionLength = 0;
+            this.inputI.SelectionStart = 0;
+            this.inputI.ShortcutsEnabled = true;
+            this.inputI.Size = new System.Drawing.Size(402, 23);
+            this.inputI.TabIndex = 28;
+            this.inputI.UseSelectable = true;
+            this.inputI.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.inputI.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel3
+            // logToFileI
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(21, 104);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel3.TabIndex = 57;
-            this.metroLabel3.Text = "baseUrl";
+            this.logToFileI.AutoSize = true;
+            this.logToFileI.Location = new System.Drawing.Point(20, 297);
+            this.logToFileI.Name = "logToFileI";
+            this.logToFileI.Size = new System.Drawing.Size(79, 15);
+            this.logToFileI.Style = MetroFramework.MetroColorStyle.Blue;
+            this.logToFileI.TabIndex = 27;
+            this.logToFileI.Text = "Log To File";
+            this.logToFileI.UseSelectable = true;
             // 
-            // metroLabel4
+            // logToUII
             // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(18, 223);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(81, 19);
-            this.metroLabel4.TabIndex = 58;
-            this.metroLabel4.Text = "Max threads";
+            this.logToUII.AutoSize = true;
+            this.logToUII.Location = new System.Drawing.Point(20, 260);
+            this.logToUII.Name = "logToUII";
+            this.logToUII.Size = new System.Drawing.Size(72, 15);
+            this.logToUII.Style = MetroFramework.MetroColorStyle.Blue;
+            this.logToUII.TabIndex = 26;
+            this.logToUII.Text = "Log To UI";
+            this.logToUII.UseSelectable = true;
             // 
-            // maxThreadsI
+            // panel1
             // 
-            this.maxThreadsI.Location = new System.Drawing.Point(105, 223);
-            this.maxThreadsI.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.maxThreadsI.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.maxThreadsI.Name = "maxThreadsI";
-            this.maxThreadsI.Size = new System.Drawing.Size(117, 20);
-            this.maxThreadsI.TabIndex = 59;
-            this.maxThreadsI.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.updateCostsB);
+            this.panel1.Controls.Add(this.UpdateTagsB);
+            this.panel1.Controls.Add(this.startB);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(739, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(170, 334);
+            this.panel1.TabIndex = 6;
+            // 
+            // updateCostsB
+            // 
+            this.updateCostsB.Location = new System.Drawing.Point(30, 59);
+            this.updateCostsB.Name = "updateCostsB";
+            this.updateCostsB.Size = new System.Drawing.Size(111, 43);
+            this.updateCostsB.Style = MetroFramework.MetroColorStyle.Blue;
+            this.updateCostsB.TabIndex = 25;
+            this.updateCostsB.Text = "Update Cost";
+            this.updateCostsB.UseSelectable = true;
+            this.updateCostsB.UseStyleColors = true;
+            this.updateCostsB.Click += new System.EventHandler(this.updateCostsB_Click);
+            // 
+            // UpdateTagsB
+            // 
+            this.UpdateTagsB.Location = new System.Drawing.Point(31, 3);
+            this.UpdateTagsB.Name = "UpdateTagsB";
+            this.UpdateTagsB.Size = new System.Drawing.Size(111, 43);
+            this.UpdateTagsB.Style = MetroFramework.MetroColorStyle.Blue;
+            this.UpdateTagsB.TabIndex = 24;
+            this.UpdateTagsB.Text = "Update Tags";
+            this.UpdateTagsB.UseSelectable = true;
+            this.UpdateTagsB.UseStyleColors = true;
+            this.UpdateTagsB.Click += new System.EventHandler(this.UpdateTagsB_Click);
+            // 
+            // startB
+            // 
+            this.startB.Location = new System.Drawing.Point(31, 115);
+            this.startB.Name = "startB";
+            this.startB.Size = new System.Drawing.Size(111, 43);
+            this.startB.Style = MetroFramework.MetroColorStyle.Blue;
+            this.startB.TabIndex = 23;
+            this.startB.Text = "Start";
+            this.startB.UseSelectable = true;
+            this.startB.UseStyleColors = true;
+            this.startB.Click += new System.EventHandler(this.startB_Click);
+            // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.Controls.Add(this.metroPanel2);
+            this.metroTabPage2.HorizontalScrollbarBarColor = false;
+            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.HorizontalScrollbarSize = 0;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 41);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(909, 334);
+            this.metroTabPage2.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "Logs";
+            this.metroTabPage2.VerticalScrollbarBarColor = false;
+            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.VerticalScrollbarSize = 0;
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.Controls.Add(this.DebugT);
+            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(909, 334);
+            this.metroPanel2.TabIndex = 2;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // DebugT
+            // 
+            this.DebugT.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DebugT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DebugT.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DebugT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DebugT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DebugT.Location = new System.Drawing.Point(0, 0);
+            this.DebugT.Margin = new System.Windows.Forms.Padding(4);
+            this.DebugT.Name = "DebugT";
+            this.DebugT.ReadOnly = true;
+            this.DebugT.Size = new System.Drawing.Size(909, 334);
+            this.DebugT.TabIndex = 1;
+            this.DebugT.Text = "";
+            this.DebugT.WordWrap = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel3.Controls.Add(this.ProgressB);
+            this.panel3.Controls.Add(this.displayT);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(20, 439);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(917, 57);
+            this.panel3.TabIndex = 17;
+            // 
+            // ProgressB
+            // 
+            this.ProgressB.Location = new System.Drawing.Point(4, 35);
+            this.ProgressB.Name = "ProgressB";
+            this.ProgressB.Size = new System.Drawing.Size(933, 14);
+            this.ProgressB.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.ProgressB.TabIndex = 4;
+            // 
+            // displayT
+            // 
+            this.displayT.AutoSize = true;
+            this.displayT.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayT.ForeColor = System.Drawing.Color.Black;
+            this.displayT.Location = new System.Drawing.Point(22, 10);
+            this.displayT.Name = "displayT";
+            this.displayT.Size = new System.Drawing.Size(91, 16);
+            this.displayT.TabIndex = 2;
+            this.displayT.Text = "Bot Started";
             // 
             // Form1
             // 
@@ -538,19 +538,19 @@
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel3);
             this.Name = "Form1";
-            this.Text = "Helloprofit product list 1.04";
+            this.Text = "Helloprofit product list 1.05";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.maxThreadsI)).EndInit();
             this.panel1.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.maxThreadsI)).EndInit();
             this.ResumeLayout(false);
 
         }

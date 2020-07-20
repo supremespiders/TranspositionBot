@@ -404,7 +404,7 @@ namespace Helloprofit_product_list
         {
             try
             {
-                var conf = File.ReadAllLines(_path + "/config.txt").ToList();
+                //var conf = File.ReadAllLines(_path + "/config.txt").ToList();
                 //_user = conf[0];
                 //_pass = conf[1];
                 //_output = conf[2];
@@ -510,12 +510,11 @@ namespace Helloprofit_product_list
         {
             try
             {
-                var conf = File.ReadAllLines(_path + "/config.txt").ToList();
-                _user = conf[0];
-                _pass = conf[1];
-                _output = conf[2];
-                _threads = int.Parse(conf[3]);
-                _baseUrl = conf[4];
+                _user = HelloProfit_UserI.Text;
+                _pass = HelloProfit_passI.Text;
+                _output = outputI.Text;
+                _threads = (int)maxThreadsI.Value;
+                _baseUrl = baseUrlI.Text;
             }
             catch (Exception ex)
             {
@@ -625,12 +624,11 @@ namespace Helloprofit_product_list
         {
             try
             {
-                var conf = File.ReadAllLines(_path + "/config.txt").ToList();
-                _user = conf[0];
-                _pass = conf[1];
-                _output = conf[2];
-                _threads = int.Parse(conf[3]);
-                _baseUrl = conf[4];
+                _user = HelloProfit_UserI.Text;
+                _pass = HelloProfit_passI.Text;
+                _output = outputI.Text;
+                _threads = (int)maxThreadsI.Value;
+                _baseUrl = baseUrlI.Text;
             }
             catch (Exception ex)
             {

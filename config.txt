@@ -1,0 +1,10 @@
+{
+  "maxThreadsI": "10",
+  "baseUrlI": "https://app.helloprofit.com/merchant/products?order=asc&fulfillment_channel%5B0%5D=AMAZON_NA",
+  "HelloProfit_passI": "Riad111!",
+  "HelloProfit_UserI": "jshalom@anchorgroupe.com",
+  "outputI": "d:/output.csv",
+  "inputI": "D:\\Work\\net\\Helloprofit product list\\bin\\Debug\\New Text Document.txt",
+  "logToFileI": "True",
+  "logToUII": "True"
+}
