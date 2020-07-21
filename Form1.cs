@@ -31,6 +31,7 @@ namespace Helloprofit_product_list
         public HttpCaller HttpCaller = new HttpCaller();
         private string _user;
         private string _pass;
+        private string _merchantId;
         private string _output;
         bool _isConsole = AppDomain.CurrentDomain.FriendlyName.Contains("Console");
         private int _threads;
@@ -416,6 +417,7 @@ namespace Helloprofit_product_list
                 _output = outputI.Text;
                 _threads = (int)maxThreadsI.Value;
                 _baseUrl = baseUrlI.Text;
+                _merchantId = MerchantIdI.Text;
             }
             catch (Exception ex)
             {
@@ -515,6 +517,7 @@ namespace Helloprofit_product_list
                 _output = outputI.Text;
                 _threads = (int)maxThreadsI.Value;
                 _baseUrl = baseUrlI.Text;
+                _merchantId = MerchantIdI.Text;
             }
             catch (Exception ex)
             {
@@ -566,8 +569,8 @@ namespace Helloprofit_product_list
 
         async Task<string> UpdateTag(Product product)
         {
-            Console.WriteLine(product.Id + " " + product.Asin + " " + product.Group);
-            var resp = await HttpCaller.PostFormData($"https://app.helloprofit.com/merchant/products/edit/{product.Id}?merchant_id=2894", new List<KeyValuePair<string, string>>
+            Console.WriteLine(product.Id + " " + product.Asin + " " + product.Group);//2894
+            var resp = await HttpCaller.PostFormData($"https://app.helloprofit.com/merchant/products/edit/{product.Id}?merchant_id{_merchantId}", new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("_method","PUT"),
                 new KeyValuePair<string, string>("id",product.Id),
@@ -578,6 +581,8 @@ namespace Helloprofit_product_list
             });
             if (resp.error != null)
                 return (resp.error);
+            if (resp.html.Contains("The page you are looking for might have been removed"))
+                return $"{product.Id} not found (404)";
             Console.WriteLine(resp.html);
             try
             {
@@ -596,7 +601,7 @@ namespace Helloprofit_product_list
 
         async Task<string> UpdateCost(Product product)
         {
-            var resp = await HttpCaller.PostFormData($"https://app.helloprofit.com/merchant/product_fees/edit?merchant_id=2894&product_id={product.Id}&region_id=1&product_cogs_id=0", new List<KeyValuePair<string, string>>
+            var resp = await HttpCaller.PostFormData($"https://app.helloprofit.com/merchant/product_fees/edit?merchant_id{_merchantId}&product_id={product.Id}&region_id=1&product_cogs_id=0", new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("name","unit_cost"),
                 new KeyValuePair<string, string>("value",product.Cost.ToString("#0.00")),
@@ -629,6 +634,7 @@ namespace Helloprofit_product_list
                 _output = outputI.Text;
                 _threads = (int)maxThreadsI.Value;
                 _baseUrl = baseUrlI.Text;
+                _merchantId = MerchantIdI.Text;
             }
             catch (Exception ex)
             {
